@@ -1,38 +1,95 @@
-\documentclass[DM,lsstdraft,toc]{lsstdoc}
+% generated from JIRA project LVV
+% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.7/site-packages/docsteady/templates/tpr.latex.jinja2.
+% using docsteady version 2.2.4
+% Please do not edit -- update information in Jira instead
+\documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
 \usepackage{geometry}
 \usepackage{longtable,booktabs}
 \usepackage{enumitem}
 \usepackage{arydshln}
+\usepackage{attachfile}
+\usepackage{array}
+\usepackage{dashrule}
 
-\input{meta.tex}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
+\input meta.tex
+
+\newcommand{\attachmentsUrl}{https://github.com/\gitorg/\lsstDocType-\lsstDocNum/blob/\gitref/attachments}
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setcounter{tocdepth}{4}
 
 \begin{document}
 
 \def\milestoneName{Alignment System Verification}
-\def\milestoneId{LVV-P84}
-\def\product{Data Management}
+\def\milestoneId{}
+\def\product{Alignment System}
 
 \setDocCompact{true}
 
-\title{LVV-P84 Alignment System Verification Test Plan and Report}
+\title{LVV-P84: Alignment System Verification Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{\vcsDate}
-\author{Sandrine Thomas}
+\date{ 2022-03-04 }
+\author{ Sandrine Thomas }
 
 \input{history_and_info.tex}
 
+
 \setDocAbstract{
-This is a stub test report created from a template.
-The content is being prepared.
+This is the test plan and report for
+\textbf{ Alignment System Verification},
+an LSST milestone pertaining to the Data Management Subsystem.\\
+This document is based on content automatically extracted from the Jira test database on \docDate.
+The most recent change to the document repository was on \vcsDate.
 }
+
 
 \maketitle
 
 \section{Introduction}
-Use the GitHub Actions workflow ``docgen from Jira'' to generate this document's content from Jira.
+\label{sect:intro}
+
+
+\subsection{Objectives}
+\label{sect:objectives}
+
+ {The objective of this test plan is to verify the Spatial Analyzer API
+is working before shipping the laser tracker from Tucson to Chile. This
+test plan consists of one test cycle that was initially started in March
+2020 and was continued in July 2021. }
+
+
+
+\subsection{System Overview}
+\label{sect:systemoverview}
+
+ {The Spatial Analyzer Controller (T2SA) interfaces with the laser
+tracker through the Spatial Analyzer API to execute scripts and measure
+the positions of the spherically mounted retroreflectors (SMR's).}
+
+
+\subsection{Document Overview}
+\label{sect:docoverview}
+
+This document was generated from Jira, obtaining the relevant information from the
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P84}{LVV-P84}
+~Jira Test Plan and related Test Cycles (
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C150}{LVV-C150}
+).
+
+Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}),
+the applicable documentation, and explains how this document is organized.
+Section \ref{sect:testplan} provides additional information about the test plan, like for example the configuration
+used for this test or related documentation.
+Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
+
+Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary},
+an overall assessment statement and suggestions for possible improvements.
+Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
+
+The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P84}{LVV-P84} in Jira is \textbf{ Completed }.
 
 \subsection{References}
 \label{sect:references}
@@ -40,5 +97,2895 @@ Use the GitHub Actions workflow ``docgen from Jira'' to generate this document's
 \bibliography{lsst,refs,books,refs_ads,local}
 
 
-\input{appendix}
+\newpage
+\section{Test Plan Details}
+\label{sect:testplan}
+
+
+\subsection{Data Collection}
+
+  Observing is not required for this test campaign.
+
+\subsection{Verification Environment}
+\label{sect:hwconf}
+  {The SA API will be verified in the laser lab in Tucson.}
+
+  \subsection{Entry Criteria}
+  {In order to run these tests, the following criteria must be met first:}
+
+\begin{itemize}
+\tightlist
+\item
+  {All communications between the MTAlignment CSC and T2SA have already
+  been verified}
+\end{itemize}
+
+  \subsection{Exit Criteria}
+  {In order for this event to be considered complete, the following
+criteria must be met:\\
+}
+
+\begin{itemize}
+\tightlist
+\item
+  {All of the executions of the test cases have been populated with the
+  actual results of the tests}
+\end{itemize}
+
+
+\subsection{Related Documentation}
+
+
+\begin{longtable}{rp{10cm}l}
+\multicolumn{3}{c}{Jira Attachments} \\ \hline
+ To LVV-C150 results &
+  AutoVectorsGroupsCAM\_VertTrackertoCAM\_HorizontalTracker.pdf & \attachfile{attachments/AutoVectorsGroupsCAM_VertTrackertoCAM_HorizontalTracker.pdf}\\ \hline
+To LVV-C150 results &
+  T2SATunnelTemplateMarch\_12\_Hor2020\_03\_12\_17\_26.xit64 & \attachfile{attachments/T2SATunnelTemplateMarch_12_Hor2020_03_12_17_26.xit64}\\ \hline
+        \end{longtable}
+
+All documents provided as attachments in Jira are downloaded to Github and linked here for convenience.
+However, since they are not properly versioned, they should be considered informal and therefore
+not be part of the verification baseline.
+
+
+\subsection{PMCS Activity}
+
+Primavera milestones related to the test campaign:
+Alignment July Acceptance Test
+-~\href{https://jira.lsstcorp.org/browse/DM-31263}{DM-31263}
+
+
+\newpage
+\section{Personnel}
+\label{sect:personnel}
+
+The personnel involved in the test campaign is shown in the following table.
+
+{\small
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{6cm}}
+\hline
+\multicolumn{2}{r}{T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P84}{LVV-P84} owner:} &
+\multicolumn{2}{l}{\textbf{ Sandrine Thomas } }\\\hline
+\multicolumn{2}{r}{T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C150}{LVV-C150} owner:} &
+\multicolumn{2}{l}{\textbf{
+Sandrine Thomas }
+} \\\hline
+\textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1816}{LVV-T1816}
+& {\small Sandrine Thomas } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small New River Kinematics Personnel\\
+Rubin Observatory Software Developer\\
+T\&S Scientist }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1814}{LVV-T1814}
+& {\small Sandrine Thomas } & {\small Colin Winslow } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small New River Kinematics Personnel\\
+Rubin Observatory Software Developer\\
+T\&S Scientist }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1817}{LVV-T1817}
+& {\small Sandrine Thomas } & {\small Colin Winslow } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small New River Kinematics Personnel\\
+Rubin Observatory Software Developer\\
+T\&S Scientist }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1813}{LVV-T1813}
+& {\small Sandrine Thomas } & {\small Mostafa Lutfi } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small New River Kinematics Personnel\\
+Rubin Observatory Software Developer\\
+T\&S Scientist }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1815}{LVV-T1815}
+& {\small Sandrine Thomas } & {\small Colin Winslow } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small New River Kinematics Personnel\\
+Rubin Observatory Software Developer\\
+T\&S Scientist }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2181}{LVV-T2181}
+& {\small Sandrine Thomas } & {\small Colin Winslow } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small New River Kinematics Personnel\\
+Rubin Observatory Software Developer\\
+T\&S Scientist }
+\medskip
+\end{minipage}
+\\ \hline
+\end{longtable}
+}
+
+\newpage
+
+\section{Test Campaign Overview}
+\label{sect:overview}
+
+\subsection{Summary}
+\label{sect:summarytable}
+
+{\small
+\begin{longtable}{p{2cm}cp{2.3cm}p{8.6cm}p{2.3cm}}
+\toprule
+\multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P84}{LVV-P84}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Alignment System Verification }} & Completed \\\hline
+\multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C150}{LVV-C150}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ T2SA Factory Acceptance Test }} & Done \\\hline
+\textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1816}{LVV-T1816}
+&  1
+& Pass w/ Deviation &
+\begin{minipage}[]{9cm}
+\smallskip
+In July 2021 this execution was set to fail as the purpose was to verify
+that the laser was behaving when the laser was aligned with the optical
+axis of the optics. We realized that there was a problem of reflectors
+visibility and therefore had to make a mechanical change to how we will
+mount the laser in the cell. The mount will be at 45 deg and the tests
+will be repeated with the nominal position being tilted.
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1814}{LVV-T1814}
+&  1
+& Fail &
+\begin{minipage}[]{9cm}
+\smallskip
+The results of this test execution were captured while the laser tracker
+was set up in a vertical position. These steps were repeated when the
+laser tracker was reconfigured with a 45degree tilt in the \emph{Testing
+of the T2SA with the laser tracker at 45 degrees} test case.~
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1817}{LVV-T1817}
+&  1
+& Pass &
+\begin{minipage}[]{9cm}
+\smallskip
+The results of this test execution were captured while the laser tracker
+was set up in a vertical position. These steps were repeated when the
+laser tracker was reconfigured with a 45degree tilt in the \emph{Testing
+of the T2SA with the laser tracker at 45 degrees} test case.
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1813}{LVV-T1813}
+&  1
+& Fail &
+\begin{minipage}[]{9cm}
+\smallskip
+The results of this test execution were captured during the continuation
+of the tests in July 2021 after the laser tracker was reconfigured with
+a 45 degree tilt.
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1815}{LVV-T1815}
+&  1
+& In Progress &
+\begin{minipage}[]{9cm}
+\smallskip
+The results of this test execution were captured during the continuation
+of the tests in July 2021 after the laser tracker was reconfigured with
+a 45 degree tilt.
+\medskip
+\end{minipage}
+&   \\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2181}{LVV-T2181}
+&  1
+& Blocked &
+\begin{minipage}[]{9cm}
+\smallskip
+As mentioned by the objective, this test case is meant to redo some of
+the original testing that was done when the laser tracker was set up
+horizontally. Specifically, the~\emph{Position Measurement of M1M3, M2
+and the camera~}test case and the \emph{Motion tests} test case have
+been called to test and will be repeated with the laser tracker tilted
+at 45deg.
+\medskip
+\end{minipage}
+&   \\\hline
+\caption{Test Campaign Summary}
+\label{table:summary}
+\end{longtable}
+}
+
+\subsection{Overall Assessment}
+\label{sect:overallassessment}
+
+{As a result of the Factory acceptance testing, the overall test can be
+considered a PASS. The test cycle was updated with additional tests that
+were a subset of tests that were initially done in March 2020. The tests
+that were done in July 2021 were able to address some of the problems
+that were seen as part of these initial tests and were seen to be passed
+as part of the latest test event. }
+
+\subsection{Recommended Improvements}
+\label{sect:recommendations}
+
+Not yet available.
+
+\newpage
+\section{Detailed Test Results}
+\label{sect:detailedtestresults}
+
+\subsection{Test Cycle LVV-C150 }
+
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C150}{T2SA Factory Acceptance Test}} in Jira.
+
+Test Cycle name: T2SA Factory Acceptance Test\\
+Status: Done
+
+This covers the verification of the interface between the Spatial
+Analyzer software that controls the laser tracker and the Commandable
+SAL Component called the Alignment System Controller.\\
+This is executed by the vendor, New River Kinematics, with our
+assistance.
+
+\subsubsection{Software Version/Baseline}
+Not provided.
+
+\subsubsection{Configuration}
+{In March 2020, the T2SA Acceptance tests were initially executed with
+the laser tracker in a vertical position. The initial tests were put on
+hold due to the pandemic so the tests were continued in July 2021.
+However, when the tests were continued in July, it was discovered that
+the laser had a hard time reaching the retroreflector on the camera
+while parallel to the optical axis of M1M3. As a result, the laser
+tracker was reconfigured with a 45 deg tilt and a subset of the initial
+verification tests that were done in March 2020 were repeated in July
+2021 with the new configuration. }
+
+\subsubsection{Test Cases in LVV-C150 Test Cycle}
+
+\paragraph{ LVV-T1816 - Measurement with the laser set up horizontally }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1816}{\textit{ LVV-T1816 } }
+test case in Jira.
+
+The objective of this test will be to verify the calibration of the
+laser holds whenever the orientation changes. Because the laser will be
+part of the M1M3 mirror cell, it is expected to change orientation
+several times during the night. This is mostly important for the tests
+that we want to conduct during the commissioning phase.
+
+\textbf{ Preconditions}:\\
+The commands and interfaces have been successfully tested with the laser
+in a vertical position.
+
+Execution status: {\bf Pass w/ Deviation }
+
+Final comment:\\In July 2021 this execution was set to fail as the purpose was to verify
+that the laser was behaving when the laser was aligned with the optical
+axis of the optics. We realized that there was a problem of reflectors
+visibility and therefore had to make a mechanical change to how we will
+mount the laser in the cell. The mount will be at 45 deg and the tests
+will be repeated with the nominal position being tilted.
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Load Compensation using LOAD\_TRACKER\_COMPENSATION\\
+If the file does not exist the error is 335
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Verified files load, and incorrectly named files produce error 335
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Measure M1M3, M2 and the camera position.\\
+Ask for POS and OFFSET~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+\begin{verbatim}
+Forgot to query positions... whoops!
+
+Offsets:
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_0.00_12;X:8.958377;Y:75.981318;Z:-664.202237;Rx:3.287680;Ry:-0.617449;Rz:1.037039;03/12/2020 15:39:54\r\n'
+\end{verbatim}
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameM2_0.00_0.00_0.00_12;X:-19.366712;Y:-5.084746;Z:-1751.262655;Rx:-0.839965;Ry:0.386325;Rz:1.880290;03/12/2020 15:39:55\r\n'
+\end{verbatim}
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameM1M3_0.00_0.00_0.00_12;X:0.001793;Y:0.000320;Z:-0.002017;Rx:0.000057;Ry:-0.000031;Rz:-0.000012;03/12/2020 15:39:56\r\n'
+\end{verbatim}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Move the laser horizontaly and set the altitude to the following:\\
+For this step Alt = 0, Az = 0 and rot = 0
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This works fine.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Redo the compensation. LOAD\_TRACKER\_COMPENSATION
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This step was not executed because it was determined that it wasn't
+necessary for this test.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Pass w/ Deviation } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Remeasure M1M3, M2 and Camera (CMD: )\\
+Ask for POS and OFFSET
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Measured M1m3 sucessfully.\\
+Camera measurement failed least squares fit because it's too tight of an
+angle for the tracker.~\\[2\baselineskip]Unable to track some SMRs
+because of the handle on the tracker blocking the beam, so we moved the
+cart closer to get more favorable angles.\\[2\baselineskip]We remeasured
+everything, but since we moved the cart between measuring with the
+tracker in a vertical orientation and remeasuring in horizontal
+orientation, we unfortunately can't make a direct
+comparison.\\[2\baselineskip]SO instead, we compared the measured
+distances between each or the 3 ``Camera'' SMRs with the tracker in both
+orientations. The difference between the two measurements is \textless{}
+4 microns.\\[2\baselineskip]Generated a SA report detailing these
+results
+
+}
+
+\paragraph{ LVV-T1814 - Position Measurement of M1M3, M2 and the camera }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1814}{\textit{ LVV-T1814 } }
+test case in Jira.
+
+The main objective of this test is to verify the T2SA is able to measure
+the positions of the fiducials placed adjacent to Camera and M1M3 using
+the Laser Tracker.
+
+\textbf{ Preconditions}:\\
+The set-up procedure and all communications between the MTAlignment CSC
+and T2SA were verified.\\[2\baselineskip]
+
+Execution status: {\bf Fail }
+
+Final comment:\\The results of this test execution were captured while the laser tracker
+was set up in a vertical position. These steps were repeated when the
+laser tracker was reconfigured with a 45degree tilt in the \emph{Testing
+of the T2SA with the laser tracker at 45 degrees} test case.~
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Pass w/ Deviation } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+To start a measurement, one needs to set the reference group of point
+using the command SET\_REFERENCE\_GROUP. LTS-966-REQ-0015\\
+Start without specifying a group name to trigger the
+error\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Error 313 should be triggered
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Expected Error 313 but got~
+
+\begin{verbatim}
+'ERR-306: Did not find or set point group and target name.\r\n'
+\end{verbatim}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the step above with a valid group name. LTS-966-REQ-0015
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+​​​​Verify in SA that the group name is the correct one
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Set Reference Group to M2, verified this shows up in SA
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Next, one needs to set the working frame using SET\_WORKING\_FRAME.
+Start without specifying a group name to trigger the error
+LTS-966-REQ-0018
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Error 314 should be triggered
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Indeed we get Error 314
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the test from above giving a working frame with the right format~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Verify in SA that the working frame is the correct one. ACK 300
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+It works. As a naming convention for frames in our template files, we
+prefix with the word FRAME, ie FRAMEM2, FRAMECAM, etc
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Use the command SET\_STATION\_LOCK with true and check that the laser is
+still locked on a SMR even when we move them LTS-966-REQ-0020
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The laser should follow the target
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+There is a misunderstanding of what the SET\_STATION\_LOCK command is
+expected to do. This test step was skipped because the expected result
+is unrelated to what the step specifies.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check of error 331, fail to lock station ?
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+There is a misunderstanding of what the SET\_STATION\_LOCK command is
+expected to do. This test step was skipped because the expected error is
+unrelated to what the command actually does.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 7 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the step above with false and verify that the laser does not
+follow the SMR when it's being moved.\\
+LTS-966-REQ-0020.\\[3\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The laser should not follow the target
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+There is a misunderstanding of what the SET\_STATION\_LOCK command is
+expected to do. This test step was skipped because the expected result
+is unrelated to what the step specifies.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 8 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Trigger error 317? LTS-966-REQ-0020\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+There is a misunderstanding of what the SET\_STATION\_LOCK command is
+expected to do. This test step was skipped because the expected error is
+unrelated to what the command actually does.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 9 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Set the tolerance of the measurement.
+SET\_LS\_TOL:\textless{}n;n\textgreater{}. LTS-966-REQ-0021\\
+That will allow to define if we need to go in another set of
+measurements.\\
+1) Give a value greater than 0.1mm to trigger the error\\
+2) Give s=0.01mm and verify that this is the right value
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+1) error 311 is triggered\\
+2) ACK 300 and the right value is in T2SA
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Set LS tolerances to rms\_tol = 0.01, max\_tol = 0.02, then measured
+M1M3.\\
+received
+
+\begin{verbatim}
+ERR-311: RMS and Max least squares tolerance value are outside bounds. Tolerances set to defaults.
+\end{verbatim}
+
+Reset tolerance to rms\_tol = 0.1, max\_tol = 0.2, then remeasured M1M3.
+Received ACK-300.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 10 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Before measuring the positions, the alignment system publishes the
+alt,Az and rot using the command PUBLISH\_ALT\_AZ\_ROT.
+LTS-966-REQ-0031\\[2\baselineskip]Repeat the measurement with the
+camera.\\
+For this step Alt = 0, Az = 0 and rot = 0
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK 300 and verify that T2SA has all 3 values correct.\\
+The alignment controller should receive the position of the Camera with
+the following format relative to M1M3:\\
+\textless{}s\textgreater{};X:\textless{}n\textgreater{};Y:\textless{}n\textgreater{};Z:\textless{}n\textgreater{};Rx:\textless{}n\textgreater{};Ry:\textless{}n\textgreater{};Rz:\textless{}n\textgreater{};\textless{}date\textgreater{}\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Successfully set alt/az/rot and verified all are set to 0 in SA.
+Successfully measured camera
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 11 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Measure the position of the M1M3 targets using the command CMD M1M3\\
+1) POS\textless{}s, s, s\textgreater{}. LTS-966-REQ-0009\\
+2) OFFSET \textless{}s;s;s; s;s;s;\textgreater{}. LTS-966-REQ-0010\\
+Repeat for M2 and the camera
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The alignment controller should receive the position of the M2 with the
+following format relative to M1M3:\\
+\textless{}s\textgreater{};X:\textbf{\textless{}n\textgreater{}};Y:\textbf{\textless{}n\textgreater{}};Z:\textbf{\textless{}n\textgreater{}};Rx:\textbf{\textless{}n\textgreater{}};Ry:\textbf{\textless{}n\textgreater{}};Rz:\textbf{\textless{}n\textgreater{};\textless{}date\textgreater{}}\\
+\textbf{or} the offset OFFSET
+(\textless{}s\textgreater{};dX:\textless{}n\textgreater{};dY:\textless{}n\textgreater{};dZ:\textless{}n\textgreater{};dRx:\textless{}n\textgreater{};dRy:\textless{}n\textgreater{};dRz:\textless{}n\textgreater{};\textless{}date\textgreater{}
+)\\
+Same for the camera\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 12 & Step Execution Status: \textbf{ Blocked } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Block an SMR and repeat the test above.\\
+Clear the error before continuing.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The measurement should fail and give the err-305.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Blocking an SMR did not cause the system to generate the expected error.
+Instead, it caused a dialog to pop up on the SA host, which must be
+manually clicked. However, this step is considered blocked because this
+issue is due to the fact that the system is waiting until it receives
+spatial information from at least 3 SMR's. Therefore, Scott will address
+this with a coding workaround so that the system recognizes one of the 3
+SMR's has been blocked and generates an error as expected.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 13 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Send the command PUBLISH\_ALT\_AZ\_ROT with no argument\\
+LTS-966-REQ-0031
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Check that we get the error 320
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Checked that we get Error 320 when we send blank strings instead of
+numeric values, and also when we send things other than numbers.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 14 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Generate the report.\\
+After finishing up the testing, we want to generate a report by issuing
+the command GEN\_REPORT with the report name.\\
+LTS-966-REQ-0023
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Check that the report exist.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+THe report exists, received~
+
+\begin{verbatim}
+ACK-300
+\end{verbatim}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 15 & Step Execution Status: \textbf{ Blocked } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check the error when trying to generate the report by using a template
+name that does not exist.\\
+Then clear the error\\
+LTS-966-REQ-0023
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Err-308\\
+Then clear error and check that the system is READY
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+The report template name isn't supplied by ASC. It's internally stored
+by T2SA and we don't interact with it at all. If it's missing, it's a
+problem with the T2SA installationn
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 16 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Save the settings by using the command SAVE\_SETTINGS.
+LTS-966-REQ-0046\\[2\baselineskip]Error?
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The settings should be the latest ones.~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+this forces an immediate writeout of saved settings in T2SA,
+guaranteeing changes will be saved even if T2SA crashes. Tested this by
+changing LS tolerance, saving settings, force-quitting T2SA, and then
+checking for the LS tolerance value after relaunching.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 17 & Step Execution Status: \textbf{ Fail } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Save the job using the SAVE\_SA\_JOBFILE using both\\
+1) the default (meaning sending no argument) and\\
+2) a valid filename.\\
+Verify that the job is saved with proper name\\[2\baselineskip]Send also
+a non valid filename and check that we get the error 316\\
+LTS-966-REQ-0035
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The jobs are saved unless the filename is incorrect in which case we
+would get the error 316.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Strictly speaking, we are not allowed to call the MTAlignment's python
+method with no argument. We can implement a default value in the
+MTAlignment, and can send an empty string as the argument, which causes
+ERR 316. Command is also producing Err316 with what I am pretty sure
+should be a valid filename though, so I'm marking this as a fail.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 18 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Testing of the command SET\_MEAS\_INDEX to 4. LTS-966-REQ-0043\\
+Then repeat the SAVE\_SA\_JOBFILE.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This step was not able to be executed due to the pandemic. This step was
+executed later as part of the continuation of the Factory Acceptance
+Test in July 2021 per the~\emph{Testing of the T2SA with the laser
+tracker at 45 degrees~}test case.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 19 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Is there an error for SET\_MEAS\_INDEX?\\
+LTS-966-REQ-0043
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This step was not able to be executed due to the pandemic. This step was
+executed later as part of the continuation of the Factory Acceptance
+Test in July 2021 per the \emph{Testing of the T2SA with the laser
+tracker at 45 degrees~}test case.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 20 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Testing of the command INC\_MEAS\_INDEX. LTS-966-REQ-0027
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This step was not able to be executed due to the pandemic. This step was
+executed later as part of the continuation of the Factory Acceptance
+Test in July 2021 per the \emph{Testing of the T2SA with the laser
+tracker at 45 degrees~}test case.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 21 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check the command SET\_POWER\_LOCK: 0 or 1\\
+LTS-966-REQ-0045
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This step was not able to be executed due to the pandemic. This step was
+executed later as part of the continuation of the Factory Acceptance
+Test in July 2021 per the \emph{Testing of the T2SA with the laser
+tracker at 45 degrees~}test case.
+
+}
+
+\paragraph{ LVV-T1817 - Motion tests }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1817}{\textit{ LVV-T1817 } }
+test case in Jira.
+
+In this test case we will move the targets in different direction and
+record the results of the motion\\
+- motion in y (vertical)\\
+- motion in z\\
+- rotation along y\\
+- rotation along z\\[2\baselineskip]We can conduct the test with the
+laser both in a vertical position and a horizontal position
+
+\textbf{ Preconditions}:\\
+The following parameters have to be adjusted:
+
+\begin{itemize}
+\tightlist
+\item
+  SET\_DRIFT\_TOL should be set to a higher value to allow the motion of
+  the order that are allowed in the tunnel
+\item
+  SET\_NUM\_ITERATIONS to 1
+\item
+  SET\_NUM\_SAMPLES to 3
+\item
+  Randomization on
+\item
+  Power-lock off
+\end{itemize}
+
+Execution status: {\bf Pass }
+
+Final comment:\\The results of this test execution were captured while the laser tracker
+was set up in a vertical position. These steps were repeated when the
+laser tracker was reconfigured with a 45degree tilt in the \emph{Testing
+of the T2SA with the laser tracker at 45 degrees} test case.
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Make a first measurement to get the baseline of the M2 and the Camera
+position relative to M1M3
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+On first attempt, we forgot to set the camera rotation to 0, (it was 5
+deg from a previous test). Unexpectedly, the tracker did not attempt to
+find the SMRs which are only slightly differently positioned from where
+we expect.\\
+Initial camera position, in camera frame of reference:\\
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_0.00_2;X:-0.099417;Y:0.009627;Z:-0.112795;Rx:0.006489;Ry:0.053660;Rz:-0.001585;03/12/2020 11:14:10\r\n'
+\end{verbatim}
+
+But resolved this by correcting the camera rotation
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Move the structure in y axis by about 10mm if possible.\\
+Then take the same measurement and record the position. If there is a
+ruler available, compare the motion measured with the actual motion.\\
+** Then try and bring it back to nominal by moving it back by half of
+the value that was measured.\\
+Take another measurement **\\[2\baselineskip]Repeat ** ** until we're in
+within 1mm.\\[2\baselineskip]\textasciitilde{}5 revolutions is about 1
+inch
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We will move the camera structure by +2 revolutions up
+(\textasciitilde{}8mm)\\
+Initially we ran into trouble because the tracker does not seem to be
+searching for the SMR at all\ldots{} Scott worked on a fix\\
+Then got results\\
+
+\begin{verbatim}
+initial measurement 
+ACK-300 RefFrame:FrameCAM_0.00_0.00_0.00_5;X:-0.071180;Y:7.455298;Z:-0.112868;Rx:0.005206;Ry:0.016533;Rz:0.000657;03/12/2020 12:37:13\r\n'
+\end{verbatim}
+
+After first iteration moving back toward nominal:\\
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_0.00_6;X:-0.068382;Y:3.901858;Z:-0.116776;Rx:0.006854;Ry:0.038436;Rz:-0.002021;03/12/2020 12:41:03\r\n'
+\end{verbatim}
+
+After second iteration\\
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_0.00_7;X:-0.104933;Y:0.712325;Z:-0.123621;Rx:0.006169;Ry:0.046394;Rz:-0.000799;03/12/2020 12:42:13\r\n'
+\end{verbatim}
+
+After third iteration\\
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_0.00_8;X:-0.097767;Y:-0.035330;Z:-0.120993;Rx:0.006369;Ry:0.053244;Rz:-0.001400;03/12/2020 12:43:14\r\n'
+\end{verbatim}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Move the structure in z axis by less than a 10mm if possible.\\
+Then take the same measurement and record the position.\\
+** Then try and bring it back to nominal by moving it back by half of
+the value that was measured.\\
+Take another measurement **\\[2\baselineskip]Repeat ** ** until we're in
+within 1mm.\\[2\baselineskip]{[}There is a dial indicator allowing to
+move the cart by +/- 0.5 inches. Note that we need to keep track of the
+number of revolution of the arrow as each revolution is
+\textasciitilde{}0.050 inches\\
+.6 inches on the way toward us (12 revolution)\\
+.4 inches on the way back{]}\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Took initial measuremnts on Cam and M2, dial was at 4.\\
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameM2_0.00_0.00_5.00_9;X:-0.256686;Y:-0.116646;Z:-0.062667;Rx:0.002226;Ry:0.081264;Rz:0.003958;03/12/2020 13:01:07\r\n'
+\end{verbatim}
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_5.00_9;X:-0.100149;Y:-0.033987;Z:-0.121444;Rx:0.001629;Ry:0.053691;Rz:-5.001706;03/12/2020 13:01:07\r\n'
+\end{verbatim}
+
+then cart into the tunnel until dial was at
+42.\\[2\baselineskip]Incremented measurement index, then remeasured cam
+and M2\\[2\baselineskip]
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameM2_0.00_0.00_5.00_10;X:-0.198055;Y:-0.001666;Z:7.870649;Rx:0.002616;Ry:0.080003;Rz:0.004325;03/12/2020 13:05:04\r\n'
+\end{verbatim}
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_5.00_10;X:-0.172625;Y:-0.487319;Z:7.803832;Rx:0.002056;Ry:0.052748;Rz:-5.001263;03/12/2020 13:05:03\r\n
+\end{verbatim}
+
+Tried to move back toward nominal position, but overshot a bit\\
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_5.00_11;X:0.045699;Y:0.881950;Z:-15.735222;Rx:-0.000338;Ry:0.054476;Rz:-5.002011;03/12/2020 13:07:46\r\n'
+\end{verbatim}
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameM2_0.00_0.00_5.00_11;X:-0.400159;Y:-0.293055;Z:-15.703755;Rx:0.000292;Ry:0.081652;Rz:0.005893;03/12/2020 13:07:47\r\n'
+\end{verbatim}
+
+Final iteration:\\
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_5.00_12;X:-0.010894;Y:0.291359;Z:-5.549460;Rx:0.001370;Ry:0.052778;Rz:-5.002555;03/12/2020 13:09:57\r\n'
+\end{verbatim}
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameM2_0.00_0.00_5.00_12;X:-0.300399;Y:-0.178240;Z:-5.501536;Rx:0.001870;Ry:0.079665;Rz:0.004046;03/12/2020 13:09:58\r\n'
+\end{verbatim}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Rotate the structure along the y axis and take a measurement.\\
+** Then try and bring it back to nominal by moving it back by half of
+the value that was measured.\\
+Take another measurement **\\[2\baselineskip]Repeat ** ** until we're in
+within 1mm.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This step was not able to be executed due to the pandemic. This step was
+executed later as part of the continuation of the Factory Acceptance
+Test in July 2021 per the \emph{Testing of the T2SA with the laser
+tracker at 45 degrees~}test case.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+For the rotation along the z axis, we will simulate the rotation by
+swapping Target 1 to Target 2, Target 2 to Target 3 and Target 3 to
+Target 1 using the software.\\[2\baselineskip]Then the rotation value
+sent toT2SA from the ASC would be 120.\\
+Measure the position and verify that the targets in SA have indeed moved
+by 120.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We decided not to do the 120 degree rotation, because our triangle is
+not a perfect equilateral triangle and so when we get an out of
+tolerance error. Instead, we will simulate a 5 degree camrot movement
+without actually moving the targets, and then look for the 5 degrees to
+show up in the offsets.\\[2\baselineskip]Initial measurement prior to
+rotation\\
+
+\begin{verbatim}
+ 'ACK-300 RefFrame:FrameCAM_0.00_0.00_0.00_8;X:-0.098292;Y:-0.033101;Z:-0.120204;Rx:0.006344;Ry:0.053388;Rz:-0.001932;03/12/2020 12:50:03\r\n'
+\end{verbatim}
+
+Then, incremented index and told T2SA that the camera rotator has moved
+5 degrees (but it really hasn't, so we expect a 5 degree z rotation
+offset in our next measurement\ldots{}\\[2\baselineskip]Then measured
+and got results\\
+
+\begin{verbatim}
+'ACK-300 RefFrame:FrameCAM_0.00_0.00_5.00_9;X:-0.099674;Y:-0.033590;Z:-0.121127;Rx:0.001604;Ry:0.053812;Rz:-5.001797;03/12/2020 12:54:20\r\n'
+\end{verbatim}
+
+-5.002 degree Rz offset shows up as expected\\[2\baselineskip]
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Send the command PUBLISH\_ALT\_AZ\_ROT with ROT = 5deg\\
+and repeat the test on the camera
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This step was not able to be executed due to the pandemic. This step was
+executed later as part of the continuation of the Factory Acceptance
+Test in July 2021 per the \emph{Testing of the T2SA with the laser
+tracker at 45 degrees~}test case.
+
+}
+
+\paragraph{ LVV-T1813 - Communication Protocol Interface Command: getting started }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1813}{\textit{ LVV-T1813 } }
+test case in Jira.
+
+The objective of this test case will be to verify the initial commands
+used to set the system up and calibrate it, using a TCP/IP protocol.~
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Fail }
+
+Final comment:\\The results of this test execution were captured during the continuation
+of the tests in July 2021 after the laser tracker was reconfigured with
+a 45 degree tilt.
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verification of the communication protocol: Commands and responses
+must:\\
+
+\begin{itemize}
+\tightlist
+\item
+  Contain only ASCII printable characters and whitespace
+\item
+  Messages always end with carriage return (0x0D `\textbackslash{}r') +
+  Line feed (0x0A `\textbackslash{}n')
+\item
+  If the command is rejected T2SA will send back ERR-300 followed by
+  carriage return (0x0D `\textbackslash{}r') + Line feed (0x0A
+  `\textbackslash{}n'
+\item
+  Messages always begin with the character `!' or `?'. `!' to represent
+  command and `?' to query for a value.
+\end{itemize}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The commands and responses follow the proper format:\\
+Commands and responses must:\\
+
+\begin{itemize}
+\tightlist
+\item
+  Contain only ASCII printable characters and whitespace
+\item
+  Messages always end with carriage return (0x0D `\textbackslash{}r') +
+  Line feed (0x0A `\textbackslash{}n')
+\item
+  If the command is rejected T2SA will send back ERR-300 followed by
+  carriage return (0x0D `\textbackslash{}r') + Line feed (0x0A
+  `\textbackslash{}n'
+\item
+  Messages always begin with the character `!' or `?'. `!' to represent
+  command and `?' to query for a value.
+\end{itemize}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+The commands and responses followed the proper format:\\
+Commands and responses includes:\\
+
+\begin{itemize}
+\tightlist
+\item
+  Contained only ASCII printable characters and whitespace
+\item
+  Messages ended with carriage return (0x0D `\textbackslash{}r') + Line
+  feed (0x0A `\textbackslash{}n')
+\item
+  If the command is rejected T2SA did send back ERR-300 followed by
+  carriage return (0x0D `\textbackslash{}r') + Line feed (0x0A
+  `\textbackslash{}n'
+\item
+  Messages always began with the character `!' or `?'. `!' to represent
+  command and `?' to query for a value.~
+\end{itemize}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Blocked } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Start SA remotely from the Alignment system controller (through T2SA).\\
+From the Alignment System Controller and with the laser connected, query
+the laser status using the ``LSTA'' command, and verify that is
+connected. The laser should be off. (LTS-966-REQ-0008).
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The application SA should start\\
+We should not see the return LNC but LOFF\\
+This will also show that the T2SA can receive commands from and responds
+to the the Alignment system controller
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This step is blocked because remote start of SA is still in
+development.\\
+However, the laser status was still found through Query as part of this
+test.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Verify the heart beat of the system (LTS-966-REQ-0002)
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The heartbeat is incremented by T2SA at least every 0.5 sec through a
+range o f0x00000000 - 0xffffffff
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+According to requirement LTS-966-REQ-0002, it does provide status
+response while SA\_SDK is completing measurement and analysis process.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Disconnect the laser by using the command ``LST 2'' and check that the
+return is telling us that the laser is disconnected.
+(REQ-LTS-966-0036).\\[3\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Return should be LNC. There should also be an acknowledgement
+ACK300.\\[3\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Returned LNC and ACK300.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Pass w/ Deviation } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Try to turn the laser on, LST 1.\\[2\baselineskip]Also using the command
+`STAT', we should see that the laser is in an error mode
+LTS-966-REQ-0011.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+We should get an error. Err-301 for both commands
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got Err-323 : Could not start instrument interface. We could not get
+trigger Err-301.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Pass w/ Deviation } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Clear error using command CLERCL -\textgreater{} This part was ~descoped
+for the 2021 run.\\
+Reconnect the laser and turn it on using the command ``LST 1''
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Example Code \\
+{\footnotesize
+LST 1
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Return should be LON and it should tell us how long we need to wait
+until it warms up (warm with the remaining time in sec).\\
+We should also get the ACK300 code
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Returned LON. Also got the ACK300 code. Does not show the warm up
+time.\\[2\baselineskip]Used LST-2 to shut everything down. Then, we
+unplugged and plugged back the controller to restart it.\\
+The PDU will need to be on.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 7 & Step Execution Status: \textbf{ Fail } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Ask for the status of the laser tracker using the command `LSTA',
+several time during the warming process.\\
+Once the warm up is ready, then use the command `STAT',
+LTS-966-REQ-0011.\\[2\baselineskip]Verify that this is done from the
+MTAlignment CSC to verify LTS-966-REQ-0012 and LTS-966-REQ-0001
+and\textbf{~}LTS-966-REQ-0004.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Return should first be WARM, ``i'' seconds. Then when it is warm, it
+should say LON.\\
+The laser should be in the state READY as a return of the command STAT.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Laser in READY state. We got ACK300. We got LNC while warming
+up.\\[2\baselineskip]The capability will be moved to CSC. And Scott will
+add a functionality to make sure we are able to get the distinction
+between the disconnection and the warming up states
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 8 & Step Execution Status: \textbf{ Blocked } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Start the measurement with the single point measurement. Choose a
+measurement profile name (s) in the alignment system controller and pass
+it to the T2SA using the command SINGLE\_POINT\_MEAS\_PROFILE
+\textless{}s\textgreater{} (LTS-966-REQ-0019).\\[2\baselineskip]Then
+proceed to the single point measurement using MEAS\_SINGLE\_POINT (which
+is a position or an offset measurement?).
+LTS-966-REQ-0024\\[2\baselineskip]Before the end of the measurement, use
+the `STAT' command to check it's taking a
+measurement.\\[2\baselineskip]Ask for the position POINT\_POS
+\textless{}refFrame\textgreater{}(LTS-966-REQ-0009)\\
+Ask for the offset POINT\_ \textless{}refFrame\textgreater{}
+(LTS-966-REQ-0010)\\[3\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK300\\[2\baselineskip]During the measurement we should get EMP as a
+return for the `STAT' command.\\[2\baselineskip]After the measurement,
+we get the position POS
+(\textless{}s\textgreater{};X:\textbf{\textless{}n\textgreater{}};Y:\textbf{\textless{}n\textgreater{}};Z:\textbf{\textless{}n\textgreater{}};Rx:\textbf{\textless{}n\textgreater{}};Ry:\textbf{\textless{}n\textgreater{}};Rz:\textbf{\textless{}n\textgreater{};\textless{}date\textgreater{}}
+)\\
+we get the offset OFFSET
+(\textless{}s\textgreater{};dX:\textbf{\textless{}n\textgreater{}};dY:\textbf{\textless{}n\textgreater{}};dZ:\textbf{\textless{}n\textgreater{}};dRx:\textbf{\textless{}n\textgreater{}};dRy:\textbf{\textless{}n\textgreater{}};dRz:\textbf{\textless{}n\textgreater{};\textless{}date\textgreater{}}
+)
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+As expected, we got ACK-300. However, due to the use of Jupyter
+notebooks for this test, we were unable to send commands in parallel. We
+were still able to get the single point measurement, but this will need
+to be fully verified later when we are not limited to the number of
+commands we can send at a time.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 9 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the previous test blocking the target and ensure you get an error
+306. (LTS-966-REQ-0024)
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Get an error 306
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We used wrong name for the point we measured and got Err-306.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 10 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Send a measurement profile that does not exist and check the status.
+(LTS-966-REQ-0019)
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Get the error 307
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Sending measurement profiles that do not exist consistently results in
+an ERR-307.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 11 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Load the template file LOAD\_SA\_TEMPLATE\_FILE with a valid template
+name. LTS-966-REQ-0022
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK300 and check that the file template is the correct one in SA
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Got the ACK300.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 12 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the name of the template to a non valid template and repeat the
+loading of the template. LTS-966-REQ-0022
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+We should get an error ERR-312
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got Err-312.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 13 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Set up the randomization to false (SET\_RANDOMIZE\_POINTS 0).
+LTS-966-REQ-0014\\
+SET\_NUM\_ITERATIONS: The number of iterations is set to 1.
+LTS-966-REQ-0013\\
+SET\_NUM\_SAMPLES:\textless{}i\textgreater{}. The number of sample is
+set to 1 LTS-966-REQ-0017\\[3\baselineskip]Measure the position of M1M3
+(CMD M1M3). LTS-966-REQ-0039\\
+Then ask POS M1M3 as well as the offsets. (These 2 should be
+equal)\\[3\baselineskip]Check that POS * OFFSET = ID
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+We should get an acknowledgment (ACK300) and when the measurement is
+done we will get the position with he following format:\\
+{POS:
+\textless{}s\textgreater{};X:}\textbf{{\textless{}n\textgreater{}}}{;Y:}\textbf{{\textless{}n\textgreater{}}}{;Z:}\textbf{{\textless{}n\textgreater{}}}{;Rx:}\textbf{{\textless{}n\textgreater{}}}{;Ry:}\textbf{{\textless{}n\textgreater{}}}{;Rz:}\textbf{{\textless{}n\textgreater{};\textless{}date\textgreater{}}}{~}\\
+{OFFSET:~{\textless{}s\textgreater{};dX:}\textbf{{\textless{}n\textgreater{}}}{;dY:}\textbf{{\textless{}n\textgreater{}}}{;dZ:}\textbf{{\textless{}n\textgreater{}}}{;dRx:}\textbf{{\textless{}n\textgreater{}}}{;dRy:}\textbf{{\textless{}n\textgreater{}}}{;dRz:}\textbf{{\textless{}n\textgreater{};\textless{}date\textgreater{}}}{~}}
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Got ACK300.\\
+Measurement done.\\
+Position and offset showed.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 14 & Step Execution Status: \textbf{ Fail } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Use CMD with an unknown name and check the error received.
+LTS-966-REQ-0039
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The error should be 305 or 300?\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+T2SA received the command. But, we did not get any error returned.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 15 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the number of the iterations using SET\_NUM\_ITERATIONS 5 for
+instance and repeat the M1M3 measurement.
+LTS-966-REQ-0013\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK300 and ensure that each points were measured 5 times. At the end we
+should get the absolute position of M1M3.~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300 . Each points were measured 5 times. Got the absolute
+position of M1M3.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 16 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check the error 322. One option is to send a negative value or not an
+integer to SET\_NUM\_ITERATIONS. LTS-966-REQ-0013
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+error 322 is triggered
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got Err-322.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 17 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the number of samples to 3 using SET\_NUM\_SAMPLES 3 leaving the
+iterations are set to 5.\\
+LTS-966-REQ-0017
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK300 and ensure that the points are measured 15 times.~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300. The points were measured 9 times as expected.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 18 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check the error 321. One option is to send a negative value or not an
+integer to SET\_NUM\_SAMPLES. LTS-966-REQ-0017
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+error 321 is triggered
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got Err-321.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 19 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Same exercise for the randomization. SET\_RANDOMIZE\_POINTS to TRUE ~and
+repeat the measurement of M1M3. LTS-966-REQ-0014\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK300 and verify that the order of the measurements is random and
+different from the previous step.~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300. ~Measurements were random from the previous step.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 20 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check error 302 by giving the value 0 to it. LTS-966-REQ-0014
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+trigger check error 302
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got Err-302 for string value.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 21 & Step Execution Status: \textbf{ Blocked } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the measurement of M1M3 and halt the measurement using HALT.
+\textbf{:~}LTS-966-REQ-0016\\
+Then check status using the command `STAT'
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK300 and the measurement should stop and the status STAT should be
+READY.\\
+Err 330????
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Because we used a Jupyter notebook for this test, we were only able to
+send commands in series. Therefore, we were unable to send a HALT
+command before the measurement was finished.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 22 & Step Execution Status: \textbf{ Blocked } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Trigger of error 319:\\
+Use the command `HALT' when the tracker is not measuring.
+LTS-966-REQ-0016
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Error 319
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Because we used a Jupyter notebook for this test, we were only able to
+send commands in series. Therefore, we were unable to provoke ERR-319
+using the HALT command.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 23 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Proceed to a reset using the command RESET\_T2SA. LTS-966-REQ-0032\\
+Then ask the status STAT.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK 300 and the system is reset. At the end of the process the status of
+the system should be READY.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK 300. We got the status ``READY'' at the end of the process.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 24 & Step Execution Status: \textbf{ Blocked } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Trigger 318: Proceed to a reset while T2SA is measuring?\\
+LTS-966-REQ-0032
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Because we used a Jupyter notebook for this test, we were only able to
+send commands in series. Therefore, we were unable to provoke ERR-318.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 25 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Move the laser and send the command NEW\_STATION. Verify in SA that the
+new station was added and repeat a measurement of M1M3.
+LTS-966-REQ-0033\\
+Also test the error 329 by covering reflectors?
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The new station should appear in SA and the measurement of M1M3 should
+give the new position
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Due to the lack of personnel support to safely re-configure the testing
+set up, this step was skipped.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 26 & Step Execution Status: \textbf{ Fail } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Using the command ``LST 0'' Turn the laser off\\
+Use LSTA to check that the laser is off
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK 300 and LOFF
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300. Reported the status as LNC instead of LOFF.~
+
+}
+
+\paragraph{ LVV-T1815 - Check Procedures Testing }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1815}{\textit{ LVV-T1815 } }
+test case in Jira.
+
+The objective of this test case will be to verify the following
+commands:
+
+\begin{itemize}
+\tightlist
+\item
+  2FACE
+\item
+  ADM
+\item
+  DRIFT
+\end{itemize}
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf In Progress }
+
+Final comment:\\The results of this test execution were captured during the continuation
+of the tests in July 2021 after the laser tracker was reconfigured with
+a 45 degree tilt.
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Execute a 2 Face check using the following command: 2FACE\_CHECK with
+the point group. LTS-966-REQ-0028\\
+Check the status using STAT
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+There should be an acknowledgment if the check passed the tolerance ACK
+300. ~\\
+The status while doing the check should be 2Face check
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300 and the status 2 Face Check.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Change the tolerance setting for the 2 face check using SET\_2FACE\_TOL.
+LTS-966-REQ-0030\\
+First set it up to a value outside the bounds (??) and check that we get
+an error.\\
+Then set it up to a tolerance that will trigger an out of tolerance
+value\\
+Repeat the 2Face check with this tolerance configuration
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+When the value set is out of tolerance, we should get the error 309\\
+Then when we set the value inside the bound we should get ACK300. The
+return from the test should be 303.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+For Tolerance, we got Err-303. Need to change the test description.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+SET\_DRIFT\_TOL to 0.1 and check that the value that is in T2SA is 0.1.
+~LTS-966-REQ-0034\\
+Then measure the drift using the MEAS\_DRIFT command. LTS-966-REQ-0026
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The drift test should start and if the drift test passes the return
+should be 300.~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Drift test passed. We got ACK300.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Set the tolerance to a small value (0.01?) and rerun the test. The value
+should be small enough to make the drift test fail.~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+error 305 or 310 should be triggered
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got Err-304 as expected.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Run through the ADM (Command?)\\
+Check the status during the test: STAT
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Result from Status: ADM
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+This step was not executed because the ADM as a command has since been
+descoped
+
+}
+
+\paragraph{ LVV-T2181 - Testing of the T2SA with the laser tracker at 45degrees }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T2181}{\textit{ LVV-T2181 } }
+test case in Jira.
+
+The objective of this test case is to re-verify some of the steps that
+were initially done as part of the FAT testing in March 2020 but with
+the laser tracker tilted at 45deg.~
+
+\textbf{ Preconditions}:\\
+
+
+Execution status: {\bf Blocked }
+
+Final comment:\\As mentioned by the objective, this test case is meant to redo some of
+the original testing that was done when the laser tracker was set up
+horizontally. Specifically, the~\emph{Position Measurement of M1M3, M2
+and the camera~}test case and the \emph{Motion tests} test case have
+been called to test and will be repeated with the laser tracker tilted
+at 45deg.
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+To start a measurement, one needs to set the reference group of point
+using the command SET\_REFERENCE\_GROUP. LTS-966-REQ-0015\\
+Start without specifying a group name to trigger the
+error\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Error 313 should be triggered
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Expected error should be Err-306( which we got).~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the step above with a valid group name. LTS-966-REQ-0015
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+​​​​Verify in SA that the group name is the correct one
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Next, one needs to set the working frame using SET\_WORKING\_FRAME.
+Start without specifying a group name to trigger the error
+LTS-966-REQ-0018
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Error 314 should be triggered
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got Err-314.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 4 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the test from above giving a working frame with the right format~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Verify in SA that the working frame is the correct one. ACK 300
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 5 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Use the command SET\_STATION\_LOCK with true and check that the laser is
+still locked on a SMR even when we move them LTS-966-REQ-0020
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The laser should follow the target
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+There is a misunderstanding of what the SET\_STATION\_LOCK command is
+expected to do. This test step was skipped because the expected result
+is unrelated to what the step specifies.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 6 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check of error 331, fail to lock station ?
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+There is a misunderstanding of what the SET\_STATION\_LOCK command is
+expected to do. This test step was skipped because the expected result
+is unrelated to what the step specifies.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 7 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Repeat the step above with false and verify that the laser does not
+follow the SMR when it's being moved.\\
+LTS-966-REQ-0020.\\[3\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The laser should not follow the target
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+There is a misunderstanding of what the SET\_STATION\_LOCK command is
+expected to do. This test step was skipped because the expected result
+is unrelated to what the step specifies.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 8 & Step Execution Status: \textbf{ Not Executed } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Trigger error 317? LTS-966-REQ-0020\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+There is a misunderstanding of what the SET\_STATION\_LOCK command is
+expected to do. This test step was skipped because the expected result
+is unrelated to what the step specifies.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 9 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Set the tolerance of the measurement.
+SET\_LS\_TOL:\textless{}n;n\textgreater{}. LTS-966-REQ-0021\\
+That will allow to define if we need to go in another set of
+measurements.\\
+1) Give a value greater than 0.1mm to trigger the error\\
+2) Give s=0.01mm and verify that this is the right value
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+1) error 311 is triggered\\
+2) ACK 300 and the right value is in T2SA
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+rms\_tol = 0.01, max\_tol = 0.02\\
+We got Error 311 in response to asking for measurement, but not for
+setting tolerance.~\\
+We got ACK300.\\[2\baselineskip]
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 10 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Before measuring the positions, the alignment system publishes the
+alt,Az and rot using the command PUBLISH\_ALT\_AZ\_ROT.
+LTS-966-REQ-0031\\[2\baselineskip]Repeat the measurement with the
+camera.\\
+For this step Alt = 0, Az = 0 and rot = 0
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+ACK 300 and verify that T2SA has all 3 values correct.\\
+The alignment controller should receive the position of the Camera with
+the following format relative to M1M3:\\
+\textless{}s\textgreater{};X:\textless{}n\textgreater{};Y:\textless{}n\textgreater{};Z:\textless{}n\textgreater{};Rx:\textless{}n\textgreater{};Ry:\textless{}n\textgreater{};Rz:\textless{}n\textgreater{};\textless{}date\textgreater{}\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300 and Position of the camera with proper format.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 11 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Measure the position of the M1M3 targets using the command CMD M1M3\\
+1) POS\textless{}s, s, s\textgreater{}. LTS-966-REQ-0009\\
+2) OFFSET \textless{}s;s;s; s;s;s;\textgreater{}. LTS-966-REQ-0010\\
+Repeat for M2 and the camera
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The alignment controller should receive the position of the M2 with the
+following format relative to M1M3:\\
+\textless{}s\textgreater{};X:\textbf{\textless{}n\textgreater{}};Y:\textbf{\textless{}n\textgreater{}};Z:\textbf{\textless{}n\textgreater{}};Rx:\textbf{\textless{}n\textgreater{}};Ry:\textbf{\textless{}n\textgreater{}};Rz:\textbf{\textless{}n\textgreater{};\textless{}date\textgreater{}}\\
+\textbf{or} the offset OFFSET
+(\textless{}s\textgreater{};dX:\textless{}n\textgreater{};dY:\textless{}n\textgreater{};dZ:\textless{}n\textgreater{};dRx:\textless{}n\textgreater{};dRy:\textless{}n\textgreater{};dRz:\textless{}n\textgreater{};\textless{}date\textgreater{}
+)\\
+Same for the camera\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300. We got position and offset values for all three targets.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 12 & Step Execution Status: \textbf{ Initial Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Block an SMR and repeat the test above.\\
+Clear the error before continuing.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The measurement should fail and give the err-305.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+It was initially seen from the \emph{Position Measurement of M1M3, M2
+and the camera} test done in March 2020 that using three total SMR's for
+this test impacted our ability to verify the error code. However, the
+vendor introduced a workaround in the code to allow for us to verify
+that an error could be provoked using only three SMR's. As a result, we
+received ERR-326 ``Fail Least Squares Best Fit''. Although this was not
+the expected result, this step was still seen as an initial pass because
+this is the expected error when the laser tracker can only detect 2
+total SMR's. The laser tracker expects to detect a total of 12 total
+SMR's so ERR-305 would only be given when there are 11 SMR's detected
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 13 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Send the command PUBLISH\_ALT\_AZ\_ROT with no argument\\
+LTS-966-REQ-0031
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Check that we get the error 320
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got Err-320 as expected.~\\[2\baselineskip]
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 14 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Generate the report.\\
+After finishing up the testing, we want to generate a report by issuing
+the command GEN\_REPORT with the report name.\\
+LTS-966-REQ-0023
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Check that the report exist.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+the report exists ( in spatial analyzer under the Reports collection)
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 15 & Step Execution Status: \textbf{ Blocked } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check the error when trying to generate the report by using a template
+name that does not exist.\\
+Then clear the error\\
+LTS-966-REQ-0023
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Err-308\\
+Then clear error and check that the system is READY
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+At the time of the test, it wasn't clear how the GEN\_REPORT command was
+supposed to be used. It was assumed that the test was to generate a
+report without initially specifying a name and so this step was skipped
+because the T2SA automatically generates a name for any report missing
+one. This step will need to be revised so that it is clear we are
+testing that trying to specify an incorrect report name will result in
+the expected error.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 16 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Save the settings by using the command SAVE\_SETTINGS.
+LTS-966-REQ-0046\\[2\baselineskip]Error?
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The settings should be the latest ones.~
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Saved settings.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 17 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Save the job using the SAVE\_SA\_JOBFILE using both\\
+1) the default (meaning sending no argument) and\\
+2) a valid filename.\\
+Verify that the job is saved with proper name\\[2\baselineskip]Send also
+a non valid filename and check that we get the error 316\\
+LTS-966-REQ-0035
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+The jobs are saved unless the filename is incorrect in which case we
+would get the error 316.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got Err-316. Got ACK300 for valine filename.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 18 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Testing of the command SET\_MEAS\_INDEX to 4. LTS-966-REQ-0043\\
+Then repeat the SAVE\_SA\_JOBFILE.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300. Index set to 4.\\
+Saved the job file.~\\[2\baselineskip]
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 19 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Is there an error for SET\_MEAS\_INDEX?\\
+LTS-966-REQ-0043
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Got Error 333 for string . But. it accepts negative number.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 20 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Testing of the command INC\_MEAS\_INDEX. LTS-966-REQ-0027
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+ACK300. Increment worked.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 21 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Check the command SET\_POWER\_LOCK: 0 or 1\\
+LTS-966-REQ-0045
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300. Off and On worked fine.~
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 22 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Make a first measurement to get the baseline of the M2 and the Camera
+position relative to M1M3
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK 300 and EMP.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 23 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Move the structure in y axis by about 10mm if possible.\\
+Then take the same measurement and record the position. If there is a
+ruler available, compare the motion measured with the actual motion.\\
+** Then try and bring it back to nominal by moving it back by half of
+the value that was measured.\\
+Take another measurement **\\[2\baselineskip]Repeat ** ** until we're in
+within 1mm.\\[2\baselineskip]\textasciitilde{}5 revolutions is about 1
+inch
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We took an initial measurement using the telescope to verify y = 0mm.
+Then we moved the structure to about 10mm using the SA and took another
+measurement with the telescope. Using the telescope we confirmed y =
+10.05mm. Then again using the values displayed on the SA, we moved the
+height of the structure to what was about 5mm. Using the telescope we
+confirmed y = 4.995mm. Finally, we moved the structure back to its
+initial position and confirmed using the telescope y = 0mm.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 24 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Move the structure in z axis by less than a 10mm if possible.\\
+Then take the same measurement and record the position.\\
+** Then try and bring it back to nominal by moving it back by half of
+the value that was measured.\\
+Take another measurement **\\[2\baselineskip]Repeat ** ** until we're in
+within 1mm.\\[2\baselineskip]{[}There is a dial indicator allowing to
+move the cart by +/- 0.5 inches. Note that we need to keep track of the
+number of revolution of the arrow as each revolution is
+\textasciitilde{}0.050 inches\\
+.6 inches on the way toward us (12 revolution)\\
+.4 inches on the way back{]}\\[2\baselineskip]
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We initially moved the structure and measured the change to be 38mm
+using the telescope. Using the live measurement values displayed by ~SA,
+we moved the structure back about halfway. The SA showed that the
+structure was now about 14mm, which we confirmed to be the same as
+reported by the telescope. ~We moved it back to the 0mm position again
+using the SA and confirmed the z was around 0.26mm using the telescope.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 25 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Rotate the structure along the y axis and take a measurement.\\
+** Then try and bring it back to nominal by moving it back by half of
+the value that was measured.\\
+Take another measurement **\\[2\baselineskip]Repeat ** ** until we're in
+within 1mm.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+WE were able to measure and query and got the expected results, first
+rotating about 11 degrees, then 5.9, then back to within .16 deg of the
+original position
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 26 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+For the rotation along the z axis, we will simulate the rotation by
+swapping Target 1 to Target 2, Target 2 to Target 3 and Target 3 to
+Target 1 using the software.\\[2\baselineskip]Then the rotation value
+sent toT2SA from the ASC would be 120.\\
+Measure the position and verify that the targets in SA have indeed moved
+by 120.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We're simulating camera rotation here without actually altering anything
+in the test setup, counter-rotating the expected position in the SA
+manually so that we can measure a 120 degree rotation without actually
+moving things around. WE also simulated a scenario where the camera
+rotator is miscalibrated and we query the camera offsets to measure the
+error\\[3\baselineskip]
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 27 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Send the command PUBLISH\_ALT\_AZ\_ROT with ROT = 5deg\\
+and repeat the test on the camera
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+We got ACK300. When the tracker attempts to measure the test camera
+SMRS, we can see it first seeking the 5 degree rotated point, before
+finding the real SMR location (since our test rig does not actually
+rotate).
+
+}
+
+
+
+\input{appendix.tex}
 \end{document}
