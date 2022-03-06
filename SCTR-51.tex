@@ -31,7 +31,7 @@
 
 \title{LVV-P84: Alignment System Verification Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{ 2022-03-04 }
+\date{ 2022-03-06 }
 \author{ Sandrine Thomas }
 
 \input{history_and_info.tex}
@@ -276,7 +276,13 @@ laser tracker was reconfigured with a 45degree tilt in the \emph{Testing
 of the T2SA with the laser tracker at 45 degrees} test case.~
 \medskip
 \end{minipage}
-&   \\\hline
+&   \href{https://jira.lsstcorp.org/browse/LVV-19977}{LVV-19977}
+\href{https://jira.lsstcorp.org/browse/LVV-19978}{LVV-19978}
+\href{https://jira.lsstcorp.org/browse/LVV-19979}{LVV-19979}
+\href{https://jira.lsstcorp.org/browse/LVV-19977}{LVV-19977}
+\href{https://jira.lsstcorp.org/browse/LVV-19978}{LVV-19978}
+\href{https://jira.lsstcorp.org/browse/LVV-19979}{LVV-19979}
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1817}{LVV-T1817}
 &  1
 & Pass &
@@ -299,7 +305,15 @@ of the tests in July 2021 after the laser tracker was reconfigured with
 a 45 degree tilt.
 \medskip
 \end{minipage}
-&   \\\hline
+&   \href{https://jira.lsstcorp.org/browse/LVV-19986}{LVV-19986}
+\href{https://jira.lsstcorp.org/browse/LVV-19987}{LVV-19987}
+\href{https://jira.lsstcorp.org/browse/LVV-19988}{LVV-19988}
+\href{https://jira.lsstcorp.org/browse/LVV-19989}{LVV-19989}
+\href{https://jira.lsstcorp.org/browse/LVV-19986}{LVV-19986}
+\href{https://jira.lsstcorp.org/browse/LVV-19987}{LVV-19987}
+\href{https://jira.lsstcorp.org/browse/LVV-19988}{LVV-19988}
+\href{https://jira.lsstcorp.org/browse/LVV-19989}{LVV-19989}
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1815}{LVV-T1815}
 &  1
 & Pass &
@@ -324,7 +338,9 @@ been called to test and will be repeated with the laser tracker tilted
 at 45deg.
 \medskip
 \end{minipage}
-&   \\\hline
+&   \href{https://jira.lsstcorp.org/browse/LVV-19978}{LVV-19978}
+\href{https://jira.lsstcorp.org/browse/LVV-19978}{LVV-19978}
+\\\hline
 \caption{Test Campaign Summary}
 \label{table:summary}
 \end{longtable}
@@ -392,7 +408,7 @@ that we want to conduct during the commissioning phase.
 
 \textbf{ Preconditions}:\\
 The commands and interfaces have been successfully tested with the laser
-in a vertical position.
+in a vertical position before being tested horizontally.
 
 Execution status: {\bf Initial Pass }
 
@@ -419,6 +435,7 @@ If the file does not exist the error is 335
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The files are loaded.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -440,6 +457,8 @@ Ask for POS and OFFSET~
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements for the positions and offsets of the M1M3, M2 and
+Camera are shown.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -474,6 +493,7 @@ For this step Alt = 0, Az = 0 and rot = 0
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The laser is moved and the altitude is set.~
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -494,6 +514,7 @@ Redo the compensation. LOAD\_TRACKER\_COMPENSATION
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The files are loaded.~
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -516,6 +537,8 @@ Ask for POS and OFFSET
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements for the positions and offsets of the M1M3, M2 and
+Camera are shown.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -558,6 +581,16 @@ was set up in a vertical position. These steps were repeated when the
 laser tracker was reconfigured with a 45degree tilt in the \emph{Testing
 of the T2SA with the laser tracker at 45 degrees} test case.~
 
+Issues found during the execution of LVV-T1814 test case:
+
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19977}{LVV-19977}~~Blocked SMR Coding Workaround
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-19978}{LVV-19978}~~Update T2SA Test Steps
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-19979}{LVV-19979}~~T2SA SAVE\_SA\_JOBFILE Command
+
+\end{itemize}
 
 Detailed steps results:
 
@@ -691,6 +724,7 @@ Check of error 331, fail to lock station ?
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+There is no error as a result of the SET\_STATION\_LOCK command.~
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -738,6 +772,7 @@ Trigger error 317? LTS-966-REQ-0020\\[2\baselineskip]
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+There is no error as a result of the SET\_STATION\_LOCK command.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -870,6 +905,14 @@ this with a coding workaround so that the system recognizes one of the 3
 SMR's has been blocked and generates an error as expected.~
 
 }
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Issues found executing this step:  \\
+{\footnotesize
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19977}{LVV-19977}~~Blocked SMR Coding Workaround
+
+\end{itemize}
+}
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 13 & Step Execution Status: \textbf{ Pass } \\ \hline
@@ -908,7 +951,7 @@ LTS-966-REQ-0023
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
-Check that the report exist.
+The report exists.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -947,6 +990,14 @@ The report template name isn't supplied by ASC. It's internally stored
 by T2SA and we don't interact with it at all. If it's missing, it's a
 problem with the T2SA installationn
 
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Issues found executing this step:  \\
+{\footnotesize
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19978}{LVV-19978}~~Update T2SA Test Steps
+
+\end{itemize}
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
@@ -1004,6 +1055,14 @@ ERR 316. Command is also producing Err316 with what I am pretty sure
 should be a valid filename though, so I'm marking this as a fail.
 
 }
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Issues found executing this step:  \\
+{\footnotesize
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19979}{LVV-19979}~~T2SA SAVE\_SA\_JOBFILE Command
+
+\end{itemize}
+}
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 18 & Step Execution Status: \textbf{ Not Executed } \\ \hline
@@ -1017,6 +1076,7 @@ Then repeat the SAVE\_SA\_JOBFILE.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The index is set to 4.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1041,6 +1101,7 @@ LTS-966-REQ-0043
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The command results in either ACK300 or ERR-333.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1064,6 +1125,7 @@ Testing of the command INC\_MEAS\_INDEX. LTS-966-REQ-0027
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The increment is set and returns ACK300.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1088,6 +1150,8 @@ LTS-966-REQ-0045
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The tracker's camera is able to be enabled and disabled, returning
+ACK300.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1155,6 +1219,7 @@ position relative to M1M3
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The position of the camera in reference to the camera frame is captured.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1192,6 +1257,7 @@ inch
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements are taken and are within 1mm as expected.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1249,6 +1315,7 @@ number of revolution of the arrow as each revolution is
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements are taken and are within 1mm as expected.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1313,6 +1380,7 @@ within 1mm.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements are taken and are within 1mm as expected.~
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1341,6 +1409,8 @@ by 120.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements are taken and the targets have moved by 120 as
+expected.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1382,6 +1452,8 @@ and repeat the test on the camera
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The command is accepted and the tracker locates the position of the
+SMRs.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -1412,6 +1484,18 @@ Final comment:\\The results of this test execution were captured during the cont
 of the tests in July 2021 after the laser tracker was reconfigured with
 a 45 degree tilt.
 
+Issues found during the execution of LVV-T1813 test case:
+
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19986}{LVV-19986}~~Develop Remote Start of SA
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-19987}{LVV-19987}~~Distinction Between Disconnect and Warming Up States
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-19988}{LVV-19988}~~T2SA CMD Verification
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-19989}{LVV-19989}~~Failed ``LST 0'' Command
+
+\end{itemize}
 
 Detailed steps results:
 
@@ -1517,6 +1601,14 @@ However, the laser status was still found through Query as part of this
 test.~
 
 }
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Issues found executing this step:  \\
+{\footnotesize
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19986}{LVV-19986}~~Develop Remote Start of SA
+
+\end{itemize}
+}
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
@@ -1566,7 +1658,7 @@ Returned LNC and ACK300.~
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 5 & Step Execution Status: \textbf{ Pass w/ Deviation } \\ \hline
+Step 5 & Step Execution Status: \textbf{ Initial Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -1590,7 +1682,7 @@ trigger Err-301.
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 6 & Step Execution Status: \textbf{ Pass w/ Deviation } \\ \hline
+Step 6 & Step Execution Status: \textbf{ Initial Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -1653,9 +1745,17 @@ add a functionality to make sure we are able to get the distinction
 between the disconnection and the warming up states
 
 }
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Issues found executing this step:  \\
+{\footnotesize
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19987}{LVV-19987}~~Distinction Between Disconnect and Warming Up States
+
+\end{itemize}
+}
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 8 & Step Execution Status: \textbf{ Blocked } \\ \hline
+Step 8 & Step Execution Status: \textbf{ Initial Pass } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -1842,6 +1942,14 @@ The error should be 305 or 300?\\[2\baselineskip]
 T2SA received the command. But, we did not get any error returned.~
 
 }
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Issues found executing this step:  \\
+{\footnotesize
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19988}{LVV-19988}~~T2SA CMD Verification
+
+\end{itemize}
+}
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
 Step 15 & Step Execution Status: \textbf{ Pass } \\ \hline
@@ -1980,7 +2088,7 @@ We got Err-302 for string value.~
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 21 & Step Execution Status: \textbf{ Blocked } \\ \hline
+Step 21 & Step Execution Status: \textbf{ Not Executed } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2007,7 +2115,7 @@ command before the measurement was finished.~
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 22 & Step Execution Status: \textbf{ Blocked } \\ \hline
+Step 22 & Step Execution Status: \textbf{ Not Executed } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2055,7 +2163,7 @@ We got ACK 300. We got the status ``READY'' at the end of the process.~
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
-Step 24 & Step Execution Status: \textbf{ Blocked } \\ \hline
+Step 24 & Step Execution Status: \textbf{ Not Executed } \\ \hline
 \end{tabular}
  Description \\
 {\footnotesize
@@ -2066,6 +2174,7 @@ LTS-966-REQ-0032
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The T2SA does not trigger ERR-318
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2122,6 +2231,14 @@ ACK 300 and LOFF
 {\footnotesize
 We got ACK300. Reported the status as LNC instead of LOFF.~
 
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Issues found executing this step:  \\
+{\footnotesize
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19989}{LVV-19989}~~Failed ``LST 0'' Command
+
+\end{itemize}
 }
 
 \paragraph{ LVV-T1815 - Check Procedures Testing }\mbox{}\\
@@ -2301,6 +2418,12 @@ and the camera~}test case and the \emph{Motion tests} test case have
 been called to test and will be repeated with the laser tracker tilted
 at 45deg.
 
+Issues found during the execution of LVV-T2181 test case:
+
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19978}{LVV-19978}~~Update T2SA Test Steps
+
+\end{itemize}
 
 Detailed steps results:
 
@@ -2429,6 +2552,7 @@ Check of error 331, fail to lock station ?
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+There is no error as a result of the SET\_STATION\_LOCK command.~
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2476,6 +2600,7 @@ Trigger error 317? LTS-966-REQ-0020\\[2\baselineskip]
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+There is no error as a result of the SET\_STATION\_LOCK command.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2642,7 +2767,7 @@ LTS-966-REQ-0023
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
-Check that the report exist.
+The report exists.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2681,6 +2806,14 @@ one. This step will need to be revised so that it is clear we are
 testing that trying to specify an incorrect report name will result in
 the expected error.~
 
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Issues found executing this step:  \\
+{\footnotesize
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19978}{LVV-19978}~~Update T2SA Test Steps
+
+\end{itemize}
 }
 \begin{tabular}{p{2cm}p{14cm}}
 \toprule
@@ -2744,6 +2877,7 @@ Then repeat the SAVE\_SA\_JOBFILE.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The index is set to 4.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2766,6 +2900,7 @@ LTS-966-REQ-0043
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The command results in either ACK300 or ERR-333.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2786,6 +2921,7 @@ Testing of the command INC\_MEAS\_INDEX. LTS-966-REQ-0027
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The increment is set and returns ACK300.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2807,6 +2943,8 @@ LTS-966-REQ-0045
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The tracker's camera is able to be enabled and disabled, returning
+ACK300.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2828,6 +2966,7 @@ position relative to M1M3
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The position of the camera in reference to the camera frame is captured.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2855,6 +2994,7 @@ inch
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements are taken and are within 1mm as expected.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2891,6 +3031,7 @@ number of revolution of the arrow as each revolution is
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements are taken and are within 1mm as expected.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2920,6 +3061,7 @@ within 1mm.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements are taken and are within 1mm as expected.~
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2947,6 +3089,8 @@ by 120.
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The measurements are taken and the targets have moved by 120 as
+expected.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
@@ -2973,6 +3117,8 @@ and repeat the test on the camera
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
   Expected Result \\
 {\footnotesize
+The command is accepted and the tracker locates the position of the
+SMRs.
 
 }
 \hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
